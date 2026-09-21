@@ -97,6 +97,10 @@ export const metadata: Metadata = {
     },
   },
 
+  verification: {
+    google: "9lfHamwr5ttWsRJ4wYAX0dtsJE62USMn8143wXtRh_w",
+  },
+
   category: "documentation",
 };
 
