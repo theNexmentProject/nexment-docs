@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/navbar/navbar"
 import styles from "./page.module.css"
 import Form from "next/form"
-import Result from "./result.tsx"
+import Result from "./result"
 
 export const metadata: Metadata = {
   title: "Search",
