@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/navbar/navbar"
-import styles from "./page.module.css"
-import Form from "next/form"
-import Result from "./result"
+import { Suspense } from "react";
+import Navbar from "@/components/navbar/navbar";
+import styles from "./page.module.css";
+import Form from "next/form";
+import Result from "./result";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -21,14 +22,21 @@ export default function Search() {
   return (
     <>
       <Navbar />
-      <div className={styles.main} >
-        <div className={styles.search} >
+
+      <div className={styles.main}>
+        <div className={styles.search}>
           <Form action="/search">
             <input name="query" type="text" placeholder="Search..." />
-            <button type="submit" className={styles.searchIcon} ><i className="fa-solid fa-magnifying-glass"></i></button>
+
+            <button type="submit" className={styles.searchIcon}>
+              <i className="fa-solid fa-magnifying-glass" />
+            </button>
           </Form>
         </div>
-        <Result />
+
+        <Suspense fallback={null}>
+          <Result />
+        </Suspense>
       </div>
     </>
   );
